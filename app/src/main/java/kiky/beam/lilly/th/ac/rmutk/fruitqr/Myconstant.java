@@ -15,7 +15,7 @@ public class Myconstant {
     private String urlGetUserWhereId = "https://www.androidthai.in.th/rmutk/getUserWhereId.php";
     private String urlGetAllDetail = "https://www.androidthai.in.th/rmutk/getDetail.php";
     private String urlGetDetailWhereIdUser = "https://www.androidthai.in.th/rmutk/getDetailWhereIdUser.php";
-    private String urlGetDetailWhereIdRecord = "https://www.androidthai.in.th/rmutk/getDetailWhereQRmaster.php";
+    private String urlGetDetailWhereIdRecord = "https://www.androidthai.in.th/rmutk/getDetailFramerWhereIdRecordMaster.php";
     private String urlGetAllDetailFramer = "https://www.androidthai.in.th/rmutk/getAllDetailFramerMaster.php";
 
     public String getUrlGetDetailWhereIdRecord() {

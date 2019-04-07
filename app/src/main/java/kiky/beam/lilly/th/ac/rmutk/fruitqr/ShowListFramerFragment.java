@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class ShowListFramerFragment extends Fragment {
 
-    private String typeUserString;
+    private String typeUserString, idRecordString;
     private Myconstant myconstant = new Myconstant();
 
 
@@ -47,6 +47,7 @@ public class ShowListFramerFragment extends Fragment {
 
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences(myconstant.getNameFileSharePreference(), Context.MODE_PRIVATE);
             typeUserString = sharedPreferences.getString("TypeUser", "");
+            idRecordString = sharedPreferences.getString("idLogin", "");
 
             int index = Integer.parseInt(typeUserString.trim());
 
@@ -61,7 +62,7 @@ public class ShowListFramerFragment extends Fragment {
             } else {
 
                 GetDataWhereOneColumn getDataWhereOneColumn = new GetDataWhereOneColumn(getActivity());
-                getDataWhereOneColumn.execute("idRecord", typeUserString, myconstant.getUrlGetDetailWhereIdRecord());
+                getDataWhereOneColumn.execute("idRecord", idRecordString, myconstant.getUrlGetDetailWhereIdRecord());
                 result = getDataWhereOneColumn.get();
 
             }

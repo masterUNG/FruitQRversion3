@@ -160,6 +160,7 @@ public class MenuDrawerFragment extends Fragment {
 
     }
 
+    //    For Login Admin Type
     private void chooseCase1(int position) {
 
         switch (position) {
@@ -195,6 +196,8 @@ public class MenuDrawerFragment extends Fragment {
                 break;
 //                เพิ่มรายการผลิตภัณท์
             case 5:
+
+
                 break;
 //                เพิ่มสมาชิก
             case 6:
@@ -212,7 +215,51 @@ public class MenuDrawerFragment extends Fragment {
 
     }
 
+    //    For Login Framer Type
     private void chooseCase2(int position) {
+
+        switch (position) {
+            case 0:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new TutorialFragment()).commit();
+
+                break;
+            case 1:
+                Intent intent = new Intent(getActivity(), QRActivity.class);
+                intent.putExtra("Login", false);
+                startActivity(intent);
+                break;
+            case 2:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new ShowListFramerFragment()).commit();
+                break;
+            case 3:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
+                break;
+            case 4:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new InfoLoginFragment()).commit();
+                break;
+            case 5:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new AboutMeFragment()).commit();
+                break;
+            case 6:
+                getActivity().finish();
+                break;
+        }
+
 
     }
 
