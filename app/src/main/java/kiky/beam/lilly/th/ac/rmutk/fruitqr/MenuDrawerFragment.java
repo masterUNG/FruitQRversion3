@@ -163,39 +163,49 @@ public class MenuDrawerFragment extends Fragment {
     private void chooseCase1(int position) {
 
         switch (position) {
+//            หน้าหลัก
             case 0:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment, new TutorialFragment()).commit();
                 break;
+//                สแกน QR code
             case 1:
                 Intent intent = new Intent(getActivity(), QRActivity.class);
                 intent.putExtra("Login", false);
                 startActivity(intent);
                 break;
+//                รายการผลผลิก
             case 2:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment, new ShowListFramerFragment()).commit();
                 break;
+//                เพิ่มรายการผลผลิด
             case 3:
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentServiceFragment, new AddFramerFragment()).commit();
                 break;
+//                รายการผลิตภัณท์
             case 4:
                 break;
+//                เพิ่มรายการผลิตภัณท์
             case 5:
                 break;
+//                เพิ่มสมาชิก
             case 6:
                 break;
+//                ข้อมูลส่วนตัว
             case 7:
                 break;
+//                เกี่ยวกับเรา
             case 8:
                 break;
+//                ออกจากระบบ
             case 9:
                 break;
         }

@@ -13,15 +13,16 @@ import java.util.ArrayList;
 public class ShowListFramerAdapter extends RecyclerView.Adapter<ShowListFramerAdapter.ShowListFramerViewHolder>{
 
     private Context context;
-    private ArrayList<String> nameStringArrayList, amountStringArrayList, dateStringArrayList;
+    private ArrayList<String> nameStringArrayList, amountStringArrayList, dateStringArrayList, nameOwnerStringArrayList;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
-    public ShowListFramerAdapter(Context context, ArrayList<String> nameStringArrayList, ArrayList<String> amountStringArrayList, ArrayList<String> dateStringArrayList, OnClickItem onClickItem) {
+    public ShowListFramerAdapter(Context context, ArrayList<String> nameStringArrayList, ArrayList<String> amountStringArrayList, ArrayList<String> dateStringArrayList, ArrayList<String> nameOwnerStringArrayList, OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
         this.nameStringArrayList = nameStringArrayList;
         this.amountStringArrayList = amountStringArrayList;
         this.dateStringArrayList = dateStringArrayList;
+        this.nameOwnerStringArrayList = nameOwnerStringArrayList;
         this.onClickItem = onClickItem;
     }
 
@@ -41,10 +42,12 @@ public class ShowListFramerAdapter extends RecyclerView.Adapter<ShowListFramerAd
         String name = nameStringArrayList.get(i);
         String amountAnUnit = amountStringArrayList.get(i);
         String date = dateStringArrayList.get(i);
+        String nameOwner = nameOwnerStringArrayList.get(i);
 
         showListFramerViewHolder.nameTextView.setText(name);
         showListFramerViewHolder.amountTextView.setText("Amount = " + amountAnUnit);
         showListFramerViewHolder.dateTextView.setText(date);
+        showListFramerViewHolder.nameOwnerTextView.setText("Owner: " + nameOwner);
 
     }
 
@@ -55,7 +58,7 @@ public class ShowListFramerAdapter extends RecyclerView.Adapter<ShowListFramerAd
 
     public class ShowListFramerViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView nameTextView, amountTextView, dateTextView;
+        private TextView nameTextView, amountTextView, dateTextView, nameOwnerTextView;
 
         public ShowListFramerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,6 +66,7 @@ public class ShowListFramerAdapter extends RecyclerView.Adapter<ShowListFramerAd
             nameTextView = itemView.findViewById(R.id.txtName);
             amountTextView = itemView.findViewById(R.id.txtAmount);
             dateTextView = itemView.findViewById(R.id.txtDate);
+            nameOwnerTextView = itemView.findViewById(R.id.txtNameOwner);
 
         }
     }
