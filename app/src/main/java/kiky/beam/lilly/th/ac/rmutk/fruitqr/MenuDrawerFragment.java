@@ -207,9 +207,14 @@ public class MenuDrawerFragment extends Fragment {
                 break;
 //                เกี่ยวกับเรา
             case 8:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new AboutMeFragment()).commit();
                 break;
 //                ออกจากระบบ
             case 9:
+                getActivity().finish();
                 break;
         }
 
@@ -263,7 +268,45 @@ public class MenuDrawerFragment extends Fragment {
 
     }
 
+//    For Product Type
     private void chooseCase3(int position) {
+
+        switch (position) {
+            case 0:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new TutorialFragment()).commit();
+
+                break;
+            case 1:
+                Intent intent = new Intent(getActivity(), QRActivity.class);
+                intent.putExtra("Login", false);
+                startActivity(intent);
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new InfoLoginFragment()).commit();
+                break;
+            case 5:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new AboutMeFragment()).commit();
+                break;
+            case 6:
+                getActivity().finish();
+                break;
+        }
+
 
     }
 
